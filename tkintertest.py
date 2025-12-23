@@ -17,7 +17,7 @@ class CheckboxFrame(customtkinter.CTkFrame):  # Inheriting CTkFrame class
 
     # values is a list of all the checkboxes you want and their names.
         # ["value1", "value2", "value3"] creates a frame holding 3 checkboxes named respectively
-    def __init__(self, master, title, values: list):
+    def __init__(self, master, title: str, values: list):
         super().__init__(master) # Calls/runs parent class. This is necessary so it initialises the inherited class.
 
         # This line below is there so the frame scales to take up the free space
@@ -47,8 +47,29 @@ class CheckboxFrame(customtkinter.CTkFrame):  # Inheriting CTkFrame class
                 checked.append(box.cget("text"))
         return checked
 
+
+class RadiobuttonFrame(customtkinter.CTkFrame):
+    def __init__(self, master, title: str, values: list):
+        super().__init__(master)
+        self.grid_columnconfigure(0, weight=1)
+
+        self.values = values
+        self.title = title
+        self.var = customtkinter.StringVar(value = "")
+
+        self.title = customtkinter.CTkLabel(self, text=self.title, fg_color="gray30", corner_radius=6)
+        self.title.grid(row=0, column=0, padx=10, pady=(10, 0), sticky="new")
+
+        for i, value in enumerate(self.values):
+            self.radio_button = customtkinter.CTkRadioButton(self, text=value, variable=self.var, value=value)
+            self.radio_button.grid(row=i + 1, column=0, padx=20, pady=20, sticky="w")
+
+    def get_radio_val(self):
+        return self.var.get()
+
+
 class App(customtkinter.CTk): # Inheriting CTk class
-    def __init__(self, title="My App"):
+    def __init__(self, title: str="My App"):
         super().__init__() # Calls parent class
 
         # Initialising Window
@@ -64,6 +85,9 @@ class App(customtkinter.CTk): # Inheriting CTk class
         self.checkbox_frame1 = CheckboxFrame(self, "I'M DAISY!", ["Pick me!", "No Pick Me!"])
         self.checkbox_frame1.grid(row=0, column=1, padx=(10, 10), pady=(10, 10), sticky="nswe")
 
+        self.radiobutton_frame = RadiobuttonFrame(self, "What is the meaning of life", ["1", "2"])
+        self.radiobutton_frame.grid(row=3, column=1, padx=(10, 10), pady=(10, 10), sticky="nswe")
+
         # Lambda function used here to allow for arguments into function
         self.button = customtkinter.CTkButton(self, text="Print L column", command=lambda: self.button_pressed(self.checkbox_frame))
         self.button.grid(row=1, column=0, padx=(10,10), pady=(10,10), sticky="nwe")
@@ -74,12 +98,18 @@ class App(customtkinter.CTk): # Inheriting CTk class
         self.button2 = customtkinter.CTkButton(self, text="Print B columns",command=self.print_all)
         self.button2.grid(row=2, column=0, padx=(10, 10), pady=(10, 10), sticky="nwe", columnspan=2)
 
+        self.button3 = customtkinter.CTkButton(self, text="Print Radio L column", command=self.print_radio_val)
+        self.button3.grid(row=4, column=0, padx=(10, 10), pady=(10, 10), sticky="nw")
+
     def button_pressed(self, frame):
         print(frame.get_checkboxes())
 
     def print_all(self):
         print(self.checkbox_frame.get_checkboxes())
         print(self.checkbox_frame1.get_checkboxes())
+
+    def print_radio_val(self):
+        print(self.radiobutton_frame.get_radio_val())
 
 app = App("My Little Pony") # Creating app object
 app.mainloop() # Needed to actually display the app.
