@@ -1,0 +1,72 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0" version="29.2.7">
+  <diagram name="Page-1" id="FpTbNbE3aK1idJ300wnA">
+    <mxGraphModel dx="1281" dy="1732" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nLXIFGCHVrdTTmnfOet8-36" edge="1" parent="1" source="nLXIFGCHVrdTTmnfOet8-13" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="400" y="40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nLXIFGCHVrdTTmnfOet8-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Start&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="80" x="360" y="-20" as="geometry" />
+        </mxCell>
+        <mxCell id="XfXrhhN-6IjUipo0fLlW-4" edge="1" parent="1" source="nLXIFGCHVrdTTmnfOet8-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="nLXIFGCHVrdTTmnfOet8-50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nLXIFGCHVrdTTmnfOet8-49" parent="1" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;User triggers download request for song.&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="140" x="330" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XfXrhhN-6IjUipo0fLlW-5" edge="1" parent="1" source="nLXIFGCHVrdTTmnfOet8-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="XfXrhhN-6IjUipo0fLlW-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nLXIFGCHVrdTTmnfOet8-50" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Retrieve config from database &amp;amp; format&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="80" x="360" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="XfXrhhN-6IjUipo0fLlW-7" edge="1" parent="1" source="XfXrhhN-6IjUipo0fLlW-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="XfXrhhN-6IjUipo0fLlW-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XfXrhhN-6IjUipo0fLlW-9" edge="1" parent="1" source="XfXrhhN-6IjUipo0fLlW-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="XfXrhhN-6IjUipo0fLlW-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XfXrhhN-6IjUipo0fLlW-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Download requested song to temp&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="80" x="360" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="XfXrhhN-6IjUipo0fLlW-6" edge="1" parent="1" source="XfXrhhN-6IjUipo0fLlW-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="XfXrhhN-6IjUipo0fLlW-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XfXrhhN-6IjUipo0fLlW-10" edge="1" parent="1" source="XfXrhhN-6IjUipo0fLlW-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="XfXrhhN-6IjUipo0fLlW-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XfXrhhN-6IjUipo0fLlW-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Get video code/url&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="80" x="360" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="XfXrhhN-6IjUipo0fLlW-12" edge="1" parent="1" source="XfXrhhN-6IjUipo0fLlW-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="XfXrhhN-6IjUipo0fLlW-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XfXrhhN-6IjUipo0fLlW-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Read metadata from song and enter into database&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="90" x="355" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="XfXrhhN-6IjUipo0fLlW-17" edge="1" parent="1" source="XfXrhhN-6IjUipo0fLlW-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="XfXrhhN-6IjUipo0fLlW-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XfXrhhN-6IjUipo0fLlW-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Relevant error reported to user.&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="80" x="490" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="XfXrhhN-6IjUipo0fLlW-14" edge="1" parent="1" source="XfXrhhN-6IjUipo0fLlW-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="XfXrhhN-6IjUipo0fLlW-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XfXrhhN-6IjUipo0fLlW-16" edge="1" parent="1" source="XfXrhhN-6IjUipo0fLlW-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="XfXrhhN-6IjUipo0fLlW-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XfXrhhN-6IjUipo0fLlW-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Move file to requested folder&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="80" x="360" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="XfXrhhN-6IjUipo0fLlW-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;End&lt;/font&gt;" vertex="1">
+          <mxGeometry height="40" width="80" x="360" y="400" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
