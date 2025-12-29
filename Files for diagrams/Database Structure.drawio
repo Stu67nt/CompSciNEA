@@ -1,0 +1,49 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0" version="29.2.9">
+  <diagram name="Page-1" id="FpTbNbE3aK1idJ300wnA">
+    <mxGraphModel dx="883" dy="388" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="I-ywoz6xHWCga-aiae5i-1" parent="1" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" value="Songs" vertex="1">
+          <mxGeometry height="140" width="120" x="400" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="I-ywoz6xHWCga-aiae5i-2" parent="I-ywoz6xHWCga-aiae5i-1" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="&lt;div&gt;(UID) SongID (int)&lt;/div&gt;&lt;div&gt;File Path (str)&lt;/div&gt;&lt;div&gt;Song Name (str)&lt;/div&gt;&lt;div&gt;Song Duration (int)&lt;/div&gt;&lt;div&gt;Artist (str)&lt;/div&gt;&lt;div&gt;Publish date (str)&lt;/div&gt;&lt;div&gt;File Type (str)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="120" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="I-ywoz6xHWCga-aiae5i-6" edge="1" parent="I-ywoz6xHWCga-aiae5i-1" source="I-ywoz6xHWCga-aiae5i-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="I-ywoz6xHWCga-aiae5i-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="I-ywoz6xHWCga-aiae5i-3" parent="1" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" value="Playlist List" vertex="1">
+          <mxGeometry height="90" width="120" x="70" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="I-ywoz6xHWCga-aiae5i-4" parent="I-ywoz6xHWCga-aiae5i-3" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="&lt;div&gt;(UID) PlaylistID (int)&lt;/div&gt;&lt;div&gt;Name (str)&lt;/div&gt;&lt;div&gt;Song Count (int)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="I-ywoz6xHWCga-aiae5i-22" parent="1" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" value="Playlist" vertex="1">
+          <mxGeometry height="70" width="90" x="250" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="I-ywoz6xHWCga-aiae5i-23" parent="I-ywoz6xHWCga-aiae5i-22" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="&lt;div&gt;PlaylistID (int)&lt;/div&gt;&lt;div&gt;SongID (int)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="90" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="I-ywoz6xHWCga-aiae5i-25" edge="1" parent="1" source="I-ywoz6xHWCga-aiae5i-4" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="I-ywoz6xHWCga-aiae5i-23" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="370" y="250" as="sourcePoint" />
+            <mxPoint x="470" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I-ywoz6xHWCga-aiae5i-26" edge="1" parent="1" source="I-ywoz6xHWCga-aiae5i-2" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=0.015;exitY=0.141;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;exitPerimeter=0;" target="I-ywoz6xHWCga-aiae5i-23" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="450" y="240" as="sourcePoint" />
+            <mxPoint x="570" y="245" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I-ywoz6xHWCga-aiae5i-28" parent="1" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" value="To Do" vertex="1">
+          <mxGeometry height="90" width="120" x="200" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="I-ywoz6xHWCga-aiae5i-29" parent="I-ywoz6xHWCga-aiae5i-28" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="&lt;div&gt;(UID) TaskID (int)&lt;/div&gt;&lt;div&gt;Task (str)&lt;/div&gt;&lt;div&gt;is Completed (bool)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" y="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
