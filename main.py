@@ -1,6 +1,6 @@
 import customtkinter
-
 from widgets import *
+from Components import *
 
 class App(customtkinter.CTk): # Inheriting CTk class
     def __init__(self, title: str="My App"):
@@ -12,16 +12,23 @@ class App(customtkinter.CTk): # Inheriting CTk class
         self.grid_columnconfigure((0,1), weight=1)
         customtkinter.set_appearance_mode("dark") # light/dark/system (system is not functional on linux)
 
-        SEARCH_MODES = ["Keyword", "Direct"]
-        self.search_select_frame = RadioButtonFrame(self, title = "Select Search Mode:", values = SEARCH_MODES,
-                                                    is_horizontal = True, title_sticky= "nsw")
-        self.search_select_frame.grid(row=0, column=0, padx=10, pady=(10,0), sticky="nwe")
+        # Creating Home Bar
+        BUTTONS = [["Home", self.hi], ["Tracks", self.hi], ["Playlists", self.hi], ["Music Finder", self.hi],
+                   ["Favourites", self.hi], ["Settings", self.hi]]
 
-        self.entry = customtkinter.CTkEntry(self, placeholder_text="CTkEntry")
-        self.entry.grid(row=1, column=0, padx=10, pady=(10, 0), sticky="nwe")
+        self.buttons = ButtonFrame(self, button_values = BUTTONS, is_horizontal = True)
+        self.buttons.grid(row=0, column=0, padx=10, pady=(10,10), sticky="new", columnspan = 2)
 
-        self.frame = CheckboxFrame(self, title = "Test", values = ["1", "2", "3"], is_scrollable = False )
-        self.frame.grid(row=2, column=0, padx=10, pady=(10,10), sticky="swe")
+        # Creating To Do List
+        self.todo = ToDoList(self)
+        self.todo.grid(row=1, column=0, padx=(10,10), pady=(10,10), sticky="nwe")
+
+        # Creating timer
+        self.timer = TimerCreate(self)
+        self.timer.grid(row=1, column=1, padx=(10,10), pady=(10,10), sticky = "nwse")
+
+    def hi(self):
+        print("hi")
 
 
 

@@ -2,10 +2,48 @@ import customtkinter
 from customtkinter import CTkFrame
 
 """
-TODO: Allow for fg_colour and corner radius to be scaled 
+TODO: 
+Allow for fg_colour and corner radius to be scaled.
+Fix Sticky
+
+Widgets exists to hold the most fundamental GUI elements which make up the program. Complex GUI elements such as 
+the To Do Lists will be found in Components.py
 """
 
+class ButtonFrame(customtkinter.CTkFrame):
+    """A frame which holds buttons. Not Scrollable."""
+    def __init__(self, master, button_values: list, title: str = "", is_horizontal: bool = False,
+                 title_sticky: str = "nesw", title_fg_color: str = "gray30", title_corner_radius:int = 6,
+                 button_sticky: str = "nesw"):
+        super().__init__(master) # Calls/runs parent class. This is necessary so it initialises the inherited class.
+
+        # This line below is there so the frame scales to take up the free space
+        self.grid(row=0, column=0, sticky="nsew")
+        self.grid_rowconfigure(0, weight=1)
+        self.grid_columnconfigure(0, weight=1)
+
+        self.button_values = button_values
+        self.buttons = []
+        self.title = title
+
+        # Creating and positioning title in frame
+        if self.title != "":
+            self.title_label = customtkinter.CTkLabel(self, text=self.title, fg_color="gray30", corner_radius=6)
+            self.title_label.grid(row=0, column=0, padx=10, pady=(10, 0), sticky=title_sticky)
+
+        # Iterating through each item in values and creating a button for it.
+        # Each button is then added to a list of buttons so we can track their state.
+        for i, value in enumerate(self.button_values):
+            self.button = customtkinter.CTkButton(self, text=value[0], command=value[1])
+            if is_horizontal:
+                self.button.grid(row=0, column=i+1, padx=20, pady=20, sticky="nwe")
+            else:
+                self.button.grid(row=i + 1, column=0, padx=20, pady=20, sticky="nwe")
+            self.buttons.append(self.button)
+
+
 class CheckboxFrame(customtkinter.CTkFrame):  # Inheriting CTkFrame class
+    # A frame holding Checkboxes
     def __init__(self, master, title: str, values: list, is_horizontal: bool = False, is_scrollable: bool = False):
         super().__init__(master) # Calls/runs parent class. This is necessary so it initialises the inherited class.
 
@@ -24,8 +62,8 @@ class CheckboxFrame(customtkinter.CTkFrame):  # Inheriting CTkFrame class
         self.title = title
 
         # Creating and positioning title in frame
-        self.title = customtkinter.CTkLabel(self.container, text=self.title, fg_color="gray30", corner_radius=6)
-        self.title.grid(row=0, column=0, padx=10, pady=(10, 0), sticky="new")
+        self.title_label = customtkinter.CTkLabel(self.container, text=self.title, fg_color="gray30", corner_radius=6)
+        self.title_label.grid(row=0, column=0, padx=10, pady=(10, 0), sticky="new")
 
         # Iterating through each item in values and creating a checkbox for it.
         # Each checkbox is then added to a list of checkboxes so we can track their state.
@@ -67,9 +105,9 @@ class RadioButtonFrame(customtkinter.CTkFrame):
         self.var = customtkinter.StringVar(value = "")
 
         # Creating title label
-        self.title = customtkinter.CTkLabel(self.container, text=self.title, fg_color=title_fg_color,
+        self.title_label = customtkinter.CTkLabel(self.container, text=self.title, fg_color=title_fg_color,
                                             corner_radius=title_corner_radius)
-        self.title.grid(row=0, column=0, sticky=title_sticky)
+        self.title_label.grid(row=0, column=0, sticky=title_sticky)
 
         # Iterating thorugh each value
         for i, value in enumerate(self.values):
