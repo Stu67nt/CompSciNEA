@@ -44,7 +44,7 @@ class ButtonFrame(customtkinter.CTkFrame):
 
 class CheckboxFrame(customtkinter.CTkFrame):  # Inheriting CTkFrame class
     # A frame holding Checkboxes
-    def __init__(self, master, title: str, values: list, is_horizontal: bool = False, is_scrollable: bool = False):
+    def __init__(self, master, values: list, title: str = "", is_horizontal: bool = False, is_scrollable: bool = False):
         super().__init__(master) # Calls/runs parent class. This is necessary so it initialises the inherited class.
 
         if is_scrollable:
@@ -62,8 +62,9 @@ class CheckboxFrame(customtkinter.CTkFrame):  # Inheriting CTkFrame class
         self.title = title
 
         # Creating and positioning title in frame
-        self.title_label = customtkinter.CTkLabel(self.container, text=self.title, fg_color="gray30", corner_radius=6)
-        self.title_label.grid(row=0, column=0, padx=10, pady=(10, 0), sticky="new")
+        if self.title != "":
+            self.title_label = customtkinter.CTkLabel(self.container, text=self.title, fg_color="gray30", corner_radius=6)
+            self.title_label.grid(row=0, column=0, padx=10, pady=(10, 0), sticky="nwe")
 
         # Iterating through each item in values and creating a checkbox for it.
         # Each checkbox is then added to a list of checkboxes so we can track their state.
@@ -85,7 +86,7 @@ class CheckboxFrame(customtkinter.CTkFrame):  # Inheriting CTkFrame class
 
 
 class RadioButtonFrame(customtkinter.CTkFrame):
-    def __init__(self, master, title: str, values: list, is_horizontal: bool = False, is_scrollable: bool = False,
+    def __init__(self, master, values: list, title: str, is_horizontal: bool = False, is_scrollable: bool = False,
                  title_sticky: str = "nesw", title_fg_color: str = "gray30", title_corner_radius:int = 6,
                  button_sticky: str = "nesw"):
         super().__init__(master)  # Initilising parent class
@@ -105,9 +106,10 @@ class RadioButtonFrame(customtkinter.CTkFrame):
         self.var = customtkinter.StringVar(value = "")
 
         # Creating title label
-        self.title_label = customtkinter.CTkLabel(self.container, text=self.title, fg_color=title_fg_color,
-                                            corner_radius=title_corner_radius)
-        self.title_label.grid(row=0, column=0, sticky=title_sticky)
+        if self.title != "":
+            self.title_label = customtkinter.CTkLabel(self.container, text=self.title, fg_color=title_fg_color,
+                                                corner_radius=title_corner_radius)
+            self.title_label.grid(row=0, column=0, sticky=title_sticky)
 
         # Iterating thorugh each value
         for i, value in enumerate(self.values):
