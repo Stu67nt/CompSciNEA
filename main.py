@@ -35,15 +35,15 @@ class Tracks(customtkinter.CTk): # Inheriting CTk class
         TOPBAR = [["Select Multiple", self.hi]]
         song_count = 50
 
-        self.topbar = ButtonFrame(master, button_values=TOPBAR, is_horizontal=True, title= f"{song_count} Songs")
+        self.topbar = customtkinter.CTkLabel("")
         self.topbar.grid(row=1, column=0, padx=10, pady=(10, 10), sticky="new")
 
     def hi(self):
         print("hi")
 
 class MyTabView(customtkinter.CTkTabview):
-    def __init__(self, master, **kwargs):
-        super().__init__(master, **kwargs)
+    def __init__(self, master):
+        super().__init__(master)
 
 		# create tabs
         self.add("Home")
@@ -64,7 +64,7 @@ class App(customtkinter.CTk):
         self.title(title)
         customtkinter.set_appearance_mode("dark")  # light/dark/system (system is not functional on linux)
 
-        self.tab_view = MyTabView(master=self)
+        self.tab_view = MyTabView(self)
         self.tab_view.grid(row=0, column=0, padx=20, pady=20)
 
 
