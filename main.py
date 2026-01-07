@@ -35,7 +35,7 @@ class Tracks(customtkinter.CTk): # Inheriting CTk class
         TOPBAR = [["Select Multiple", self.hi]]
         song_count = 50
 
-        self.topbar = customtkinter.CTkLabel("")
+        self.topbar = customtkinter.CTkLabel(master)
         self.topbar.grid(row=1, column=0, padx=10, pady=(10, 10), sticky="new")
 
     def hi(self):
